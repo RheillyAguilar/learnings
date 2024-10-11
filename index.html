@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <!-- custom elements -->
+    <h1 class="heading">Custom Element</h1>
+    <div class="custom-element">
+      <user-details
+        img="/male.png"
+        name="Ellie"
+        gender="Male"
+        age="23"
+        course="BSCS"
+        textColor="blue"
+      >
+      </user-details>
+      <user-details
+        img="/female.png"
+        name="Max"
+        gender="Female"
+        age="23"
+        course="BSCS"
+        textColor="blue"
+      >
+      </user-details>
+    </div>
+
+
+    <!-- shadow dom -->
+     <h1 class="heading">Shadow DOM</h1>
+    <counter-element></counter-element>
+
+    <!-- Custom Element and Shadow DOM-->
+    <h1 class="heading">Custom Element and Shadow DOM</h1>
+    <div>
+      <div class="custom-element">
+        <custom-shadow
+          img="/male.png"
+          name="Ellie"
+          gender="Male"
+          age="23"
+          course="BSCS"
+        >
+        </custom-shadow>
+
+        <custom-shadow
+          img="/female.png"
+          name="Max"
+          gender="Female"
+          age="23"
+          course="BSCS"
+        >
+        </custom-shadow>
+      </div>
+    </div>
+
+    <!-- template and slot -->
+    <h1 class="heading">Custom Element, Shadow, Template, and Slots</h1>
+    <div class="custom-element">
+      <item-element image="/nike.png" name="Nike" price="$200">
+        <template id="item-slot-details">
+          <style>
+            .attribute {
+              font-size: 12px;
+              width: 20rem;
+            }
+          </style>
+          <details>
+            <summary>
+              <code class="name"></code>
+              <slot name="details-name">Need Name</slot>
+            </summary>
+            <div class="attribute">
+              <slot name="attribute"><p>None</p></slot>
+            </div>
+          </details>
+        </template>
+      </item-element>
+
+      <item-slot>
+        <span slot="details-name">Description</span>
+        <dl slot="attribute">
+          <dd>
+            Created for the hardwood but taken to the streets, the Nike Dunk Low
+            Retro returns with crisp overlays and original team colours. This
+            basketball icon channels '80s vibes with premium leather in the
+            upper that looks good and breaks in even better. Modern footwear
+            technology helps bring the comfort into the 21st century.
+          </dd>
+        </dl>
+      </item-slot>
+    </div>
+
+
+    <!-- styling strategies -->    
+    <h1 class="heading">Styling Strategies</h1>
+    <hello-component></hello-component>
+    <header-template></header-template>
+    <content-template></content-template> 
+
+
+    <!-- ::SLOT -->
+    <h1>::Slot</h1>
+    <template id="person-template">
+    <div>
+        <h2>ID Card</h2>
+        <slot name="person-name">Need Name</slot>
+        <slot name="person-age">Need Age</slot>
+        <slot name="person-gender">Need Gender</slot>
+        <slot name="person-address">Need Address</slot>
+        </div>
+    </template>
+    <person-details>
+        <p slot="person-name">Name: Ellie</p>
+        <p slot="person-age">Age: 23</p>
+        <p slot="person-gender">Gender: Male</p>
+        <p slot="person-address">Address: Pasig</p>
+    </person-details>
+    <person-details>
+        <p slot="person-name">Name: Ellie</p>
+        <p slot="person-age">Age: 23</p>
+        <p slot="person-gender">Gender: Male</p>
+        <p slot="person-address">Address: Pasig</p>
+    </person-details>
+
+
+
+    <!-- Connecting Web Components to Forms -->
+     <h1 class="heading">Connecting Web Components to forms</h1>
+    <my-input type="text" placeholder="Username" value="Ellie" error="Wrong Username"></my-input>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+<script type="module" src="index.js"></script>   
+</body>
+</html>
